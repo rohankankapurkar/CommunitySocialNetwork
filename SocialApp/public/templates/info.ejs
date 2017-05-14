@@ -1,0 +1,58 @@
+
+<div class="nav navbar-default center-block">
+    <h3>All the members in your community</h3>
+  </div>
+<div class="form-group" ng-controller = "infoController">
+		<table class="table table-bordered table-hover table-active">
+			<tr>
+				<th>Email</th>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Role </th>
+                <th>Message</th>
+                <th>Send Mail</th>
+
+
+                
+			</tr>
+			<tr ng-repeat="product in allproducts">
+				<td>{{product.email}}</td>
+				<td>{{product.firstname}}</td>
+				<td>{{product.lastname}}</td>
+				<td>{{product.role}}</td>
+                <td><div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">With Floating Label</label>
+                            <input type="text" ng-model ="product.message" class="form-control">
+                        </div>
+                    </div></td>
+                <td><button name="SendMail" ng-click="sendMail(product.email, product.message)" type="submit"
+                            class="btn btn-round ">Send email</button></td>
+                
+			
+                
+			</tr>
+            
+            
+		</table>
+</br>
+<!--<div class= "form-group">-->
+
+
+    <!--<div class = "table-active">-->
+<!--</br>-->
+            <!--<h3 class = "active">Update contact information </h3>-->
+<!--</br></br>-->
+<!--<form class="active">-->
+    <!--Enter your birthdate  <input type="date" class="form-control" id="Birthday" placeholder=" Birthdate" name= "Birthday" ng-model = "Birthday"> </br>-->
+    <!--Tell us about yourself  <input type="text" class="form-control" id="about" placeholder="about yourself" name= "about" ng-model = "about"> </br>-->
+    <!--Ebay Handle<input type="text" class="form-control" id="Ebay_handle" placeholder="enter username" name= "Ebay_handle" ng-model = "Ebay_handle"> </br>-->
+    <!--Enter your Address  <input type="text" class="form-control" id="address" placeholder="address" name= "Address" ng-model = "Address"> </br>-->
+    <!--Enter your Contact no  <input type="text" class="form-control" id="contact" placeholder="contact number" name= "Contact" ng-model = "Contact"> </br>-->
+
+        <!--<button type="submit" class="btn btn-default" ng-click= addinfo()>Update information</button>-->
+<!--</form>-->
+  <!--</div>-->
+<!--</div>-->
+
+  </div>
