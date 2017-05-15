@@ -90,8 +90,8 @@
       <file leaf-file-name="register.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="95" column="47" selection-start-line="95" selection-start-column="47" selection-end-line="95" selection-end-column="47" />
+            <state relative-caret-position="-83">
+              <caret line="118" column="79" selection-start-line="118" selection-start-column="79" selection-end-line="118" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -372,12 +372,12 @@
       <workItem from="1494638703237" duration="6674000" />
       <workItem from="1494658039289" duration="3956000" />
       <workItem from="1494712558087" duration="18504000" />
-      <workItem from="1494760353230" duration="7001000" />
+      <workItem from="1494760353230" duration="7505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36135000" />
+    <option name="totallyTimeSpent" value="36639000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -798,8 +798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="95" column="47" selection-start-line="95" selection-start-column="47" selection-end-line="95" selection-end-column="47" />
+        <state relative-caret-position="-83">
+          <caret line="118" column="79" selection-start-line="118" selection-start-column="79" selection-end-line="118" selection-end-column="79" />
           <folding />
         </state>
       </provider>
