@@ -2,7 +2,6 @@ var ejs = require("ejs");
 var session = require("express-session");
 var mysql = require('./mysql');
 var sign = false;
-var bcrypt = require('bcrypt');
 const saltRounds = 10;
 //const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
@@ -233,13 +232,8 @@ console.log("role"+req.param("role"));
 
 
 var pass = req.param("pwd");
-var salt = bcrypt.genSaltSync(saltRounds);
-var hash = bcrypt.hashSync(pass, salt);
-bcrypt.hash(req.param("pwd"), saltRounds, function(err, hash) {
-	  // Store hash in your password DB. 
-	});
 
-console.log("encryptrd password" + hash);
+
 
 
 

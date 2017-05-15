@@ -6,7 +6,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var bcrypt = require('bcrypt');
 
 
 
@@ -25,10 +24,6 @@ app.set('view engine', 'ejs');
 
 
 
-//code for bcrypt
-const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
-const someOtherPlaintextPassword = 'not_bacon';
 
 
 
