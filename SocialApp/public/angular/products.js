@@ -165,9 +165,8 @@ app.controller('cartController', function($scope,$http,$route) {
 		
 		$scope.purchase = function(data) {
 			var p_id = {
-				"p_id" : data,
-				"card" : $scope.card,
-				"cvv" : $scope.cvv
+				"email" : data,
+
 				
 				
 				};
@@ -180,8 +179,7 @@ app.controller('cartController', function($scope,$http,$route) {
 			//credit card validation code
 			
 			
-			if($scope.card.length===16 && $scope.cvv.length===3 && !isNaN($scope.card)){
-			
+
 			$http({
 				method : "POST",
 				url : '/purchase',
@@ -197,15 +195,13 @@ app.controller('cartController', function($scope,$http,$route) {
 				}
 			})
 			
-			alert("item purchased successfully");
+			alert("User added to the community");
 			$route.reload();
 			
-			}
+
 			
-			else {
-				alert("invalid credentails");
-				
-			}
+
+
 		}
 		
 		

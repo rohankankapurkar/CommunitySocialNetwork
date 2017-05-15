@@ -48,7 +48,7 @@ function afterSignIn(req,res)
 
 		//console.log("printing email"+document.getElementById('email'));
 
-		var getUser="select * from USERS where email='"+req.param("username")+"' and pwd = '"+req.param("password")+"'";
+		var getUser="select * from USERS where email='"+req.param("username")+"' and pwd = '"+req.param("password")+"' and isApproved = 'yes'";
 
 	console.log("printing login query"+getUser);
 
@@ -75,7 +75,7 @@ function afterSignIn(req,res)
 							}
 						// render or error
 							else {
-							res.end('An error occurred');
+							res.end('An error occurred. Moderator need to approve your request');
 							console.log(err);
 						}
 					});
@@ -387,9 +387,8 @@ exports.addToCart = function (req, res) {
 
 exports.cart = function (req, res) {
 
-	var entry = console.log(req.session.username[0].username+ "  Inside the cart function");
-	
-	var insert = "select p.p_id, p.p_name, p.p_disc,p.p_price,p.username from product p , cart c where p.p_id = c.p_id and c.user_id ='"+req.session.username[0].username+"' ";
+
+	var insert = "select * from USERS where isApproved != 'yes' and role = 'user'";
 	
     console.log("QUERY for checking the cart is :" + insert);
 
@@ -429,37 +428,12 @@ exports.cart = function (req, res) {
 
 exports.purchase = function (req, res) {
 
-	var entry = console.log(req.session.username[0].username);
-	var p_id = req.param("p_id");
-	console.log(p_id + "captured the pid correctly inside the addToCart"+ p_id);
-	var card = req.param("card");
-	console.log("printing out the credit card number"+ card);
-	console.log(card.length);
-	
-	
+	console.log("In am inside the approving the user");
+	console.log("****APPROVING USER*****")
+	var email = req.param("email");
+	var insert = "update USERS set isApproved = 'yes' where email = '"+req.param("email")+"' ";
 
-	
-	//credit card validation
-	
-	if (card.length === 16){
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	var insert="insert into purchase (p_id,username) values ('"+req.param("p_id")+"','"+req.session.username[0].username+"'  )";
-	
-	var insert2 = " insert into purchase2(p_id,p_name,p_quantity,p_price,p_disc,username) select * from product where p_id = '"+req.param("p_id")+"' ";
-	
-	var insert3 = "update purchase2 set myname = '"+req.session.username[0].username+"' where p_id = '"+req.param("p_id")+"' ";
-	
-	var deleteFromCart = "delete from cart where p_id ='"+req.param("p_id")+"'";
-	
-	var deleteFromProducts = "delete from product where p_id = '"+req.param("p_id")+"'";
+
 
 	console.log("QUERY for submitting an AD is:" + insert);
 
@@ -487,115 +461,7 @@ exports.purchase = function (req, res) {
 			}
 		}
 	}, insert)
-	
-	mysql.fetchData(function(err, results) {
-		
-		console.log("inside the inserting into purchase");
 
-		if (err) {
-			throw err;
-		} 
-		else{
-			if (results.length > 0) {
-				
-				console.log("Inserted into products2");
-				json_responses = {"statusCode" : 200};
-				//res.send(json_responses);
-				
-			} 
-			else {
-				
-				console.log("Error while insering into cart");
-				json_responses = {"statusCode" : 401};
-				//res.send(json_responses);
-				
-			}
-		}
-	}, insert2)
-	
-		mysql.fetchData(function(err, results) {
-		
-		console.log("inside the inserting into purchase");
-
-		if (err) {
-			throw err;
-		} 
-		else{
-			if (results.length > 0) {
-				
-				console.log("Inserting into purchase2 the mailid only");
-				json_responses = {"statusCode" : 200};
-				//res.send(json_responses);
-				
-			} 
-			else {
-				
-				console.log("Error while insering into mailid into purchase2");
-				json_responses = {"statusCode" : 401};
-				//res.send(json_responses);
-				
-			}
-		}
-	}, insert3)
-	
-mysql.fetchData(function(err, results) {
-		
-		console.log("inside the deleting a cart item when added to purchase");
-
-		if (err) {
-			throw err;
-		} 
-		else{
-			if (results.length = 0) {
-				
-				console.log("delete item from cart as it is added into purchased");
-				json_responses1 = {"statusCode" : 200};
-				//res.send(json_responses1);
-				
-			} 
-			else {
-				
-
-				console.log("Error inside the deleting product from Cart");
-				json_responses = {"statusCode" : 401};
-				//res.send(json_responses);
-				
-			}
-		}
-	}, deleteFromCart);
-	
-	
-mysql.fetchData(function(err, results) {
-		
-		console.log("deleting from purchase table");
-
-		if (err) {
-			throw err;
-		} 
-		else{
-			if (results.length = 0) {
-				
-				console.log("delete item from purchase. 3rd query");
-				json_responses1 = {"statusCode" : 200};
-				res.send(json_responses1);
-				
-			} 
-			else {
-				
-
-				console.log("Error inside the deleting product from Product.3rd query");
-				json_responses = {"statusCode" : 401};
-				res.send(json_responses);
-				
-			}
-		}
-	}, deleteFromProducts);
-}	
-	
-	else {
-		//window.alert("invalid credentails");
-		res.send("invalid credentails");
-	}
 }
 
 

@@ -15,6 +15,8 @@ var home = require('./routes/home');
 var product = require('./routes/product');
 var mail = require('./routes/mail');
 var tweet = require('./routes/tweet');
+var mod = require('./routes/mod');
+
 
 var app = express();
 
@@ -54,6 +56,8 @@ app.use('/users', users);
 app.post('/checklogin',home.afterSignIn);
 //app.post('/buy',product.buy);
 app.get('/signin', home.signin);
+app.get('/signInMod', mod.signInMod);
+
 
 
 app.get('/signout', home.logout);
@@ -75,6 +79,7 @@ app.post('/info1',home.info1);
 app.post('/sendMail',mail.sendMail);
 app.post('/sendTweet',tweet.sendTweet);
 app.get('/loadTweets',tweet.loadTweets);
+app.post('/afterSignInMod',mod.afterSignInMod);
 
 
 

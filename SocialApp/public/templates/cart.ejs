@@ -1,6 +1,5 @@
 <div class="jumbotron">
-    <h3>Shopping cart </h3>
-    <p>purchase or remove items from your cart </p>
+    <h3><center> Accept or reject member </center></h3>
   </div>
 
 
@@ -10,56 +9,35 @@
 	<div>
 		<table class="table table-bordered table-hover table-active">
 			<tr>
-				<th>PRODUCT ID</th>
-				<th>PRODUCT NAME</th>
-				<th>PRODUCT PRICE</th>
-				<th>PRODUCT DESCRIPTION</th>
-                <th>OWNER</th>
-				<th>Confirm Order</th>
-                <th>Delete from cart</th>
+				<th>Firstnme</th>
+				<th>Lastname</th>
+				<th>Email</th>
+				<th>Address</th>
+                <th>Community</th>
+				<th>Approve</th>
+                <th>Reject</th>
                 
 			</tr>
 			<tr ng-repeat="product in allproducts">
-				<td>{{product.p_id}}</td>
-				<td>{{product.p_name}}</td>
-				<td>{{product.p_price}}</td>
-				<td>{{product.p_disc}}</td>
-                <td>{{product.username}}</td>
+				<td>{{product.firstname}}</td>
+				<td>{{product.lastname}}</td>
+				<td>{{product.email}}</td>
+				<td>{{product.address}}</td>
+                <td>{{product.community}}</td>
                 
-				<td><button name="Buy" ng-click="purchase(product.p_id)" type="submit"
-											class="btn btn-primary">Buy</button></td>
+				<td><button name="Approve" ng-click="purchase(product.email)" type="submit"
+											class="btn btn-success btn-round ">Approve</button></td>
                 
-                <td><button name="Delete" ng-click="deleteFromCart(product.p_id)" type="submit"
-											class="btn btn-primary">Remove</button></td>
+                <td><button name="Reject" ng-click="deleteFromCart(product.email)" type="submit"
+											class="btn btn-danger btn-round ">Reject</button></td>
             </tr>
 		</table>
 
 	</div>
     
-    <h3>Please give your credit card details for payment </h3>
+
     
-    
-        
-        <div class="form-group row">
-  <label  class="col-xs-2 col-form-label">Credit card number</label>
-  <div class="col-xs-5">
-    <input ng-model = "card" name= "card" class="form-control" type="text" placeholder="0000-0000-0000-0000" id="example-text-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-search-input" class="col-xs-2 col-form-label">CVV</label>
-  <div class="col-xs-5">
-    <input ng-model= "cvv" name= "cvv" class="form-control" type="text" placeholder="XYZ" id="example-search-input">
-  </div>
-</div>
-        <div class="form-group row">
-  <label for="example-search-input" class="col-xs-2 col-form-label">Expiry date </label>
-  <div class="col-xs-5">
-    <input ng-model = "expiry" name= "expiry" class="form-control" type="date" placeholder="zx/as/qwer" id="example-search-input">
-  </div>
-</div>
-    
-   
+
     
  
     
