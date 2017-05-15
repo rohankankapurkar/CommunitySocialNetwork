@@ -21,10 +21,8 @@
 				<td>{{product.lastname}}</td>
 				<td>{{product.role}}</td>
                 <td><div class="col-sm-4">
-                        <div class="form-group label-floating">
-                            <label class="control-label">With Floating Label</label>
-                            <input type="text" ng-model ="product.message" class="form-control">
-                        </div>
+							<textarea class="form-control" placeholder="Here can be your nice text" ng-model="product.message" rows="4"></textarea>
+
                     </div></td>
                 <td><button name="SendMail" ng-click="sendMail(product.email, product.message)" type="submit"
                             class="btn btn-round ">Send email</button></td>

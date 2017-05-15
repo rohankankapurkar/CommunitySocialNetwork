@@ -216,32 +216,91 @@ app.controller('cartController', function($scope,$http,$route) {
 
 
 app.controller('historyController', function($scope,$http) {
-	console.log("I am in history controller");
-	//console.log("here" +$scope.status);
-	//console.log("printing product name" + $scope.p_name);
-	
+
+
+
+	$http({
+		method : "GET",
+		url : '/loadTweets'
+
+	}).success(function(data) {
+		//checking the response data for statusCode
+		if (data.msg) {
+			console.log("data received successfully");
+			$scope.allproducts = data.msg;
+			console.log("Result fetached is " + $scope.allproducts);
+			console.log(JSON.stringify($scope.allproducts));
+
+
+		}
+		else
+		{
+			console.log("failed while sending data new product");
+		}
+		//Making a get call to the '/redirectToHomepage' API
+	}).error(function(error) {
+		console.log("failed inside products.js");
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	console.log("I am in send tweet controller");
+	console.log("here" +$scope.tweet);
+
+
+	$scope.postTweet = function() {
+
+		console.log("inside the send tweet function");
+
 		$http({
 			method : "POST",
-			url : '/history'
-			
+			url : '/sendTweet',
+			data : {
+				'tweet':$scope.tweet
+			}
 		}).success(function(data) {
 			//checking the response data for statusCode
-			console.log(data+ "oho");
-			if (data.statusCode == 200) {
-				console.log("data received successfully");
-				$scope.allproducts = data.results;
-				console.log("Result fetached is " + $scope.allproducts);
-				console.log(JSON.stringify($scope.allproducts));
-				}
+			if (data.msg) {
+				console.log("Tweet inserted in mongo");
+				console.log("printing all the tweets"+JSON.stringify(data.msg));
+				$scope.allproducts = data.msg;
+
+
+
+
+			}
 			else
-				{
+			{
 				console.log("failed while sending data new product");
-				}
-				//Making a get call to the '/redirectToHomepage' API
+				console.log(data.msg);
+				console.log("printing all the tweets"+JSON.stringify(data.msg));
+
+			}
+			//Making a get call to the '/redirectToHomepage' API
 		}).error(function(error) {
-               console.log("failed inside products.js");
+			console.log("failed inside info.js");
 		});
-		
+	};
 });
 
 

@@ -1,34 +1,34 @@
-<div class="jumbotron">
-    <h3>History of purchase </h3>
-    <p>Check the previous orders</p>
-  </div>
 
 
 
 
 
 <div class="div-align" ng-controller="historyController">
+
+	<br><br>
+<div class="container-fluid">
+	<textarea ng-model = "tweet"class="form-control" placeholder="Here can be your nice text" rows="5"></textarea>
+	<button ng-click = "postTweet()" class="btn btn-success btn-round btn-lg">Broadcast</button>
+	<br>
+	<br>
+</div>
 	<div>
 		<table class="table table-bordered table-hover table-active">
 			<tr>
-				<th>Product Id</th>
-				<th>Name</th>
-				<th>Price</th>
-				<th>Product description</th>
-                <th>Purchased from</th>
-			
-                
+				<th>Email</th>
+				<th>Tweet</th>
+
+
+
+
 			</tr>
 			<tr ng-repeat="product in allproducts">
-				<td>{{product.p_id}}</td>
-				<td>{{product.p_name}}</td>
-				<td>{{product.p_price}}</td>
-				<td>{{product.p_disc}}</td>
-                <td>{{product.username}}</td>
-                
-				
-            
-                
+				<td>{{product.email}}</td>
+				<td>{{product.tweet}}</td>
+
+
+
+
 			</tr>
 		</table>
 

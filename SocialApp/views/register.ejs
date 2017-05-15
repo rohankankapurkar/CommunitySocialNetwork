@@ -78,7 +78,7 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="/userLogin">Login</a></li>
+                    <li><a href="/signin">Login</a></li>
 
                 </ul>
             </div>
@@ -93,7 +93,7 @@
                         <div class="card card-signup">
                             <form class="form" method="" action="">
                                 <div class="header header-primary text-center">
-                                    <h4>Sign In</h4>
+                                    <h4>Sign Up</h4>
 
                                 </div>
                                 <div class="content">
@@ -126,27 +126,45 @@
                                     </div>
 
                                     <div class="input-group">
-										<span class="input-group-addon">
-											<i class="material-icons">lock_outline</i>
-										</span>
+    <div class="row">
+        <div class="col-md-5">
 
-                                        <div class="btn btn-simple btn-primary btn-lg">
-                                            <select id="role" class="specialColor" ng-model = "role" class="btn btn-simple btn-primary btn-lg"required>
+                                        <div class="btn btn-simple btn-primary btn-lg"><p>Role</p>
+                                            <select id="role" placeholder="Role..." class="specialColor" ng-model = "role" class="btn btn-simple btn-primary btn-lg"required>
                                                 <option class="specialColor" value="administrator">Administrator</option>
                                                 <option class="specialColor" value="moderator">Moderator</option>
                                                 <option class="specialColor" value="user">User</option>
 
                                             </select>
                                         </div>
+
+
+        </div>
+        <div class="col-md-6">
+
+                                            <div class="btn btn-simple btn-primary btn-lg"><p>Community</p>
+                                                <select id="role" placeholder="Role..." class="specialColor" ng-model = "role" class="btn btn-simple btn-primary btn-lg"required>
+                                                    <option class="specialColor" value="administrator">Administrator</option>
+                                                    <option class="specialColor" value="moderator">Moderator</option>
+                                                    <option class="specialColor" value="user">User</option>
+
+                                                </select>
+                                            </div>
+
+
+        </div>
+
+
+    </div>
+
+
                                     </div>
-
-
-
 
                                 </div>
                                 <div class="footer text-center">
-                                    <input type="submit" class="btn btn-simple btn-primary btn-lg" ng-click="register_user();"
+                                    <input type="submit" class="btn btn-success btn-round btn-lg" ng-click="register_user();"
                                            value="Register" />
+                                    <br>
                                 </div>
                             </form>
                         </div>

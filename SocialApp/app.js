@@ -15,6 +15,8 @@ var users = require('./routes/users');
 var home = require('./routes/home');
 var product = require('./routes/product');
 var mail = require('./routes/mail');
+var tweet = require('./routes/tweet');
+
 var app = express();
 
 // view engine setup
@@ -76,6 +78,9 @@ app.post('/yourads',home.yourads);
 app.post('/info',home.info);
 app.post('/info1',home.info1);
 app.post('/sendMail',mail.sendMail);
+app.post('/sendTweet',tweet.sendTweet);
+app.get('/loadTweets',tweet.loadTweets);
+
 
 
 
