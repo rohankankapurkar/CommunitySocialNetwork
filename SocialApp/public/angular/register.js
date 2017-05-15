@@ -11,7 +11,9 @@ register.controller('register', function($scope, $http) {
 			"lastname" : $scope.lastname,
 			"email" : $scope.email,
 			"pwd" : $scope.pwd,
-		    "role":$scope.role
+		    "role":$scope.role,
+		 "address":$scope.address,
+		  "community":$scope.community
 	};
 	
 

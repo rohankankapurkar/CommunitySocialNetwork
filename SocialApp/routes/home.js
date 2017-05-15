@@ -49,7 +49,7 @@ function afterSignIn(req,res)
 
 		//console.log("printing email"+document.getElementById('email'));
 
-		var getUser="select * from USERS where email='"+req.param("username")+"' and pwd = '"+req.param("password")+"' ";
+		var getUser="select * from USERS where email='"+req.param("username")+"' and pwd = '"+req.param("password")+"'";
 
 	console.log("printing login query"+getUser);
 
@@ -84,19 +84,7 @@ function afterSignIn(req,res)
 
 
 			    console.log (JSON.stringify(results));
-				//req.session.username = results;
-				//req.session.id=results[0].user_id;
 
-
-
-                //
-				// console.log(results[0].username+ "this is the username in session");
-				// console.log(req.session.username[0].username);
-				// console.log(req.session.username[0].time);
-
-				//session implementation
-
-			      //res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
 
 
 				}
@@ -116,43 +104,6 @@ function afterSignIn(req,res)
 				}
 			}
 		},getUser);
-
-
-	//adding for displying date
-
-/*mysql.fetchData(function(err, results) {
-
-		console.log("inside the inserting into purchase");
-
-		if (err) {
-			throw err;
-		}
-		else{
-			if (results.length > 0) {
-
-				console.log("Inserting into users := date");
-				json_responses = {"statusCode" : 200};
-				//res.send(json_responses);
-
-			}
-			else {
-
-				console.log("Error while insering date into users");
-				json_responses = {"statusCode" : 401};
-				//res.send(json_responses);
-
-			}
-		}
-	}, date)*/
-
-
-
-
-
-
-
-
-
 	}
 
 
@@ -292,7 +243,7 @@ console.log("encryptrd password" + hash);
 
 
 
-var insert="insert into USERS (email,pwd,firstname,lastname,role) values ('"+req.param("email")+"',  '"+req.param("pwd")+"' , '"+req.param("firstname")+"' , '"+req.param("lastname")+"', '"+req.param("role")+"')";
+var insert="insert into USERS (email,pwd,firstname,lastname,role,community,address,isApproved) values ('"+req.param("email")+"',  '"+req.param("pwd")+"' , '"+req.param("firstname")+"' , '"+req.param("lastname")+"', '"+req.param("role")+"', '"+req.param("community")+"', '"+req.param("address")+"','no')";
 mysql.fetchData(function(err,results){
 	if(err){
 		throw err;
