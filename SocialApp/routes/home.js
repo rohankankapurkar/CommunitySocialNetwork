@@ -75,7 +75,7 @@ function afterSignIn(req,res)
 							}
 						// render or error
 							else {
-							res.end('An error occurred. Moderator need to approve your request');
+							res.end('An error occurred. Moderator need to approve your requestr');
 							console.log(err);
 						}
 					});

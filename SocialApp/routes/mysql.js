@@ -2,10 +2,10 @@ var ejs= require('ejs');//importing module ejs
 var mysql = require('mysql');//importing module mysql
 function getConnection(){
 	var connection = mysql.createConnection({
-		host : 'csnet.cn9igngmescf.us-west-1.rds.amazonaws.com', //host where mysql server is running
-		user : 'rohan', //user for the mysql application
-		password : 'kankapurkar', //password for the mysql application
-		database : 'cmpe281', //database name
+		host : 'csnet.ccgg6usw4lnu.us-west-1.rds.amazonaws.com', //host where mysql server is running
+		user : 'akshay', //user for the mysql application
+		password : 'akshay1234', //password for the mysql application
+		database : 'csnet', //database name
 		port : 3306 //port, it is 3306 by default for mysql
 	});
 	return connection;
