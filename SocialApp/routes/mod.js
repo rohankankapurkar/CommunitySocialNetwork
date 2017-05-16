@@ -22,7 +22,7 @@ function signInMod(req,res) {
 }
 
 function signInAdmin(req,res) {
-    res.render('signInAdmin.ejs',function(err, result) {
+    res.render('signInAdmin',function(err, result) {
         // render on success
         if (!err) {
             res.end(result);

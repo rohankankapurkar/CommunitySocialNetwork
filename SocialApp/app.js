@@ -60,7 +60,6 @@ app.get('/signInMod', mod.signInMod);
 app.get('/signInAdmin',mod.signInAdmin);
 
 
-
 app.get('/signout', home.logout);
 app.post('/afterSignIn',home.afterSignIn);
 app.get('/afterSignIn',home.login);
