@@ -57,6 +57,7 @@ app.post('/checklogin',home.afterSignIn);
 //app.post('/buy',product.buy);
 app.get('/signin', home.signin);
 app.get('/signInMod', mod.signInMod);
+app.get('/signInAdmin',mod.signInAdmin);
 
 
 
@@ -80,6 +81,8 @@ app.post('/sendMail',mail.sendMail);
 app.post('/sendTweet',tweet.sendTweet);
 app.get('/loadTweets',tweet.loadTweets);
 app.post('/afterSignInMod',mod.afterSignInMod);
+app.post('/afterSignInAdmin',mod.afterSignInAdmin);
+
 
 
 

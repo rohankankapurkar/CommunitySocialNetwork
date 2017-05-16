@@ -388,7 +388,7 @@ exports.addToCart = function (req, res) {
 exports.cart = function (req, res) {
 
 
-	var insert = "select * from USERS where isApproved != 'yes' and role = 'user'";
+	var insert = "select * from USERS where isApproved != 'yes'";
 	
     console.log("QUERY for checking the cart is :" + insert);
 
